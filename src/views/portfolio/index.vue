@@ -7,14 +7,18 @@
         </h1>
       </header>
       
-      <Navbar 
-        :categories="['TOUT', ...galleryStore.categories]" 
-        v-model:selected="selectedCategory"
-        class="mb-2 md:mb-4" 
-      />
+      <div class="navbar-container">
+        <div class="container mx-auto px-6 sm:px-10 md:px-20 lg:px-28 xl:px-36 2xl:px-48 relative">
+          <Navbar 
+            :categories="['TOUT', ...galleryStore.categories]" 
+            v-model:selected="selectedCategory"
+            class="mb-2 md:mb-4" 
+          />
+        </div>
+      </div>
     </div>
     
-    <div class="flex-grow container mx-auto px-2 sm:px-4 md:px-12 lg:px-20 xl:px-28 2xl:px-32 mt-2 md:mt-4">
+    <div class="flex-grow container mx-auto px-6 sm:px-10 md:px-20 lg:px-28 xl:px-36 2xl:px-48 mt-2 md:mt-4">
       <MasonryGallery :items="filteredItems" />
     </div>
   </main>
@@ -71,6 +75,11 @@ const filteredItems = computed(() => allItems.value)
   text-transform: none;
   padding: 0.25rem 1.5rem;
   display: inline-block;
+}
+
+.navbar-container {
+  overflow: visible;
+  width: 100%;
 }
 
 @media (max-width: 640px) {
