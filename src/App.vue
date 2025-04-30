@@ -1,3 +1,4 @@
+
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useGalleryStore } from '@/stores/gallery'
@@ -12,7 +13,7 @@ console.log(galleryStore.galleries)
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <h2>Catégories</h2>
     <ul>
       <li
@@ -43,5 +44,11 @@ console.log(galleryStore.galleries)
         style="width: 100px; margin: 3px"
       />
     </div>
+  </div> -->
+  <div>
+    
+    <router-view />
+    
   </div>
+  
 </template>

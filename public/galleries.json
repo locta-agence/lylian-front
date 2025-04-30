@@ -1,10 +1,33 @@
 {
-  "cars": [
-    "/galleries/cars/ChatGPT Image 24 avr. 2025, 10_31_09.png",
-    "/galleries/cars/ChatGPT Image 24 avr. 2025, 10_55_42.png"
-  ],
+  "action": [],
+  "brands": [],
+  "cars": [],
+  "concert": [],
+  "film": [],
   "montagne": [
-    "/galleries/montagne/ChatGPT Image 24 avr. 2025, 12_48_33.png",
-    "/galleries/montagne/ChatGPT Image 24 avr. 2025, 15_47_22.png"
-  ]
+    "/galleries/montagne/img (1).png",
+    "/galleries/montagne/img (10).png",
+    "/galleries/montagne/img (11).png",
+    "/galleries/montagne/img (12).png",
+    "/galleries/montagne/img (13).png",
+    "/galleries/montagne/img (14).png",
+    "/galleries/montagne/img (15).png",
+    "/galleries/montagne/img (16).png",
+    "/galleries/montagne/img (17).png",
+    "/galleries/montagne/img (18).png",
+    "/galleries/montagne/img (19).png",
+    "/galleries/montagne/img (2).png",
+    "/galleries/montagne/img (20).png",
+    "/galleries/montagne/img (3).png",
+    "/galleries/montagne/img (4).png",
+    "/galleries/montagne/img (5).png",
+    "/galleries/montagne/img (6).png",
+    "/galleries/montagne/img (7).png",
+    "/galleries/montagne/img (8).png",
+    "/galleries/montagne/img (9).png",
+    "/galleries/montagne/img.png"
+  ],
+  "nature": [],
+  "portrait": [],
+  "travel": []
 }
