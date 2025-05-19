@@ -5,10 +5,10 @@
   >
     <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
       <LogoCard />
-      <h2 class="text-[40px] font-extrabold leading-[100%] text-[#FCFCFC] text-center uppercase">
+      <h2 class="text-[43px] font-extrabold leading-[100%] text-[#FCFCFC] text-center uppercase tracking-wide">
         Photographer
       </h2>
-      <h2 class="text-[40px] font-extrabold leading-[100%] text-[#FCFCFC] text-center uppercase">
+      <h2 class="text-[43px] font-extrabold leading-[100%] text-[#FCFCFC] text-center uppercase tracking-wide">
         & Filmmaker
       </h2>
     </div>
