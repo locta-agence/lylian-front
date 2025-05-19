@@ -4,7 +4,7 @@
     :style="{ backgroundImage: `url(${currentBg})` }"
   >
     <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-      <img src="/logo.png" alt="Llianshoots" class="w-1/2 md:w-1/4 mb-2">
+      <LogoCard />
       <h2 class="text-[40px] font-extrabold leading-[100%] text-[#FCFCFC] text-center uppercase">
         Photographer
       </h2>
@@ -13,14 +13,15 @@
       </h2>
     </div>
 
-    <MenuOverlay />
+    <MenuCard color="white" />
 
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import MenuOverlay from '@/components/Layout/MenuOverlay.vue'
+import LogoCard from '@/components/Layout/LogoCard.vue'
+import MenuCard from '@/components/Layout/MenuCard.vue'
 
 const bgImages = [
   '/bg/bg1.png',
