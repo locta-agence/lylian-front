@@ -1,11 +1,7 @@
 <template>
   <main class="text-white w-full min-h-screen flex flex-col" style="background-color: #181818;">
     <div class="sticky-header bg-[#181818] z-10">
-      <header class="py-4 md:py-8">
-        <h1 class="text-center text-3xl md:text-4xl font-serif tracking-wider">
-          <span class="logo-text">Lylianshoots</span>
-        </h1>
-      </header>
+      <HeaderLogo />  
       
       <Navbar 
         :categories="['TOUT', ...galleryStore.categories]" 
@@ -17,6 +13,8 @@
     <div class="flex-grow container mx-auto px-2 sm:px-4 md:px-12 lg:px-20 xl:px-28 2xl:px-32 mt-2 md:mt-4">
       <MasonryGallery :items="filteredItems" />
     </div>
+
+    <MenuCard :banner="true" />
   </main>
 </template>
 
@@ -25,6 +23,8 @@ import { ref, computed, onMounted } from 'vue'
 import { useGalleryStore } from '@/stores/gallery'
 import Navbar from '@/components/Navbar.vue'
 import MasonryGallery from '@/components/MasonryGallery.vue'
+import HeaderLogo from '@/components/Layout/HeaderLogo.vue'
+import MenuCard from '@/components/Layout/MenuCard.vue'
 
 const galleryStore = useGalleryStore()
 const selectedCategory = ref('TOUT')
