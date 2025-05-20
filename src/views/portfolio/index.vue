@@ -19,7 +19,9 @@
     </div>
     
     <div class="flex-grow container mx-auto px-6 sm:px-10 md:px-20 lg:px-28 xl:px-36 2xl:px-48 mt-2 md:mt-4">
-      <MasonryGallery :items="filteredItems" />
+      <!-- Affichage conditionnel basé sur la catégorie sélectionnée -->
+      <MasonryGallery v-if="selectedCategory === 'TOUT'" :items="allItems" />
+      <CategoryGallery v-else :items="categoryItems" :category="selectedCategory" />
     </div>
   </main>
 </template>
@@ -29,6 +31,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useGalleryStore } from '@/stores/gallery'
 import Navbar from '@/components/Navbar.vue'
 import MasonryGallery from '@/components/MasonryGallery.vue'
+import CategoryGallery from '@/components/CategoryGallery.vue'
 
 const galleryStore = useGalleryStore()
 const selectedCategory = ref('TOUT')
@@ -38,25 +41,24 @@ onMounted(() => {
   galleryStore.loadGalleries()
 })
 
-// Transformation des URLs d'images en objets pour compatibilité avec MasonryGallery
+// Items pour l'affichage "TOUT" (masonry)
 const allItems = computed(() => {
-  if (selectedCategory.value === 'TOUT') {
-    return galleryStore.allImages.map((image, index) => ({
-      id: index + 1,
-      image: image,
-      category: 'TOUT'
-    }))
-  } else {
-    galleryStore.setCategory(selectedCategory.value)
-    return galleryStore.images.map((image, index) => ({
-      id: index + 1,
-      image: image, 
-      category: selectedCategory.value
-    }))
-  }
+  return galleryStore.allImages.map((image, index) => ({
+    id: index + 1,
+    image: image,
+    category: 'TOUT'
+  }))
 })
 
-const filteredItems = computed(() => allItems.value)
+// Items pour l'affichage par catégorie
+const categoryItems = computed(() => {
+  galleryStore.setCategory(selectedCategory.value)
+  return galleryStore.images.map((image, index) => ({
+    id: index + 1,
+    image: image,
+    category: selectedCategory.value
+  }))
+})
 </script>
 
 <style scoped>
