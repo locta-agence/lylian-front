@@ -4,7 +4,7 @@
     :style="{ backgroundImage: `url(${currentBg})` }"
   >
     <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-      <LogoCard />
+      <img src="/logo.png" alt="Llianshoots" width="100" class="w-1/2 md:w-1/6 mb-2">
       <h2 class="text-[43px] font-extrabold leading-[100%] text-[#FCFCFC] text-center uppercase tracking-wide">
         Photographer
       </h2>

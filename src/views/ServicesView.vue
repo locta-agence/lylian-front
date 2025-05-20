@@ -1,28 +1,26 @@
 <template>
-  <div class="min-h-screen bg-[#181818] text-white px-0 md:px-8 py-0 md:py-12 pt-[110px]">
-    <div class="fixed top-0 left-0 w-full z-50 bg-[#181818] pb-2">
-      <HeaderLogo />
-      <nav class="flex justify-center w-full gap-18 text-sm font-bold uppercase mt-4 mb-8">
-        <button
-          @click="scrollToSection('services')"
-          :class="[
-            'focus:outline-none cursor-pointer text-base',
-            activeSection === 'services' ? 'text-[#b3c7ce]' : 'text-white'
-          ]"
-        >
-          SERVICES
-        </button>
-        <button
-          @click="scrollToSection('tarifs')"
-          :class="[
-            'focus:outline-none cursor-pointer text-base',
-            activeSection === 'tarifs' ? 'text-[#b3c7ce]' : 'text-white'
-          ]"
-        >
-          TARIFS
-        </button>
-      </nav>
-    </div>
+  <div class="min-h-screen bg-[#181818] text-white px-0 md:px-8 py-0 md:py-12">
+    <HeaderLogo />
+    <nav class="flex justify-center w-full gap-18 text-sm font-bold uppercase mt-4 mb-8">
+      <button
+        @click="scrollToSection('services')"
+        :class="[
+          'focus:outline-none cursor-pointer text-base',
+          activeSection === 'services' ? 'text-[#b3c7ce]' : 'text-white'
+        ]"
+      >
+        SERVICES
+      </button>
+      <button
+        @click="scrollToSection('tarifs')"
+        :class="[
+          'focus:outline-none cursor-pointer text-base',
+          activeSection === 'tarifs' ? 'text-[#b3c7ce]' : 'text-white'
+        ]"
+      >
+        TARIFS
+      </button>
+    </nav>
 
     <!-- Section SERVICES -->
     <section
