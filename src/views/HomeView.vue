@@ -35,7 +35,7 @@ const currentIndex = ref(0)
 const currentBg = ref(bgImages[currentIndex.value])
 const showMenu = ref(false)
 
-let interval: NodeJS.Timeout
+let interval: number
 
 onMounted(() => {
   interval = setInterval(() => {

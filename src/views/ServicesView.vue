@@ -1,10 +1,28 @@
 <template>
-  <div class="min-h-screen bg-[#181818] text-white px-0 md:px-8 py-0 md:py-12">
-    <HeaderLogo />
-    <nav class="flex justify-center w-full gap-18 text-sm font-bold uppercase mt-4 mb-8">
-      <button @click="scrollToSection('services')" class="focus:outline-none cursor-pointer text-base">SERVICES</button>
-      <button @click="scrollToSection('tarifs')" class="focus:outline-none cursor-pointer text-base">TARIFS</button>
-    </nav>
+  <div class="min-h-screen bg-[#181818] text-white px-0 md:px-8 py-0 md:py-12 pt-[110px]">
+    <div class="fixed top-0 left-0 w-full z-50 bg-[#181818] pb-2">
+      <HeaderLogo />
+      <nav class="flex justify-center w-full gap-18 text-sm font-bold uppercase mt-4 mb-8">
+        <button
+          @click="scrollToSection('services')"
+          :class="[
+            'focus:outline-none cursor-pointer text-base',
+            activeSection === 'services' ? 'text-[#b3c7ce]' : 'text-white'
+          ]"
+        >
+          SERVICES
+        </button>
+        <button
+          @click="scrollToSection('tarifs')"
+          :class="[
+            'focus:outline-none cursor-pointer text-base',
+            activeSection === 'tarifs' ? 'text-[#b3c7ce]' : 'text-white'
+          ]"
+        >
+          TARIFS
+        </button>
+      </nav>
+    </div>
 
     <!-- Section SERVICES -->
     <section
@@ -50,23 +68,54 @@
       </div>
     </section>
 
-    <section class="flex flex-col items-center text-center my-24">
-      <p class="text-lg md:text-2xl mb-2">Lorem ipsum dolor sit amet consectetur.</p>
-      <p class="text-2xl md:text-3xl font-extrabold">
+    <!-- Section Bannière Texte -->
+    <section class="flex flex-col items-center justify-center text-right min-h-[40vh] my-24 w-full">
+      <p class="text-xl md:text-4xl font-light tracking-wide mb-4 w-full text-right mr-16">
+        Lorem ipsum dolor sit amet consectetur.
+      </p>
+      <p class="text-3xl md:text-6xl font-extrabold leading-tight w-full text-right mr-16">
         Turpis lacinia est nisl<br />
         pellentesque dignissim<br />
-        imperdiet pellentesque.
+        imperdiet<br />
+        pellentesque.
       </p>
     </section>
 
     <!-- Menu en bas -->
-    <MenuCard banner="true" />
+    <MenuCard :banner="true" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import HeaderLogo from '@/components/Layout/HeaderLogo.vue'
 import MenuCard from '@/components/Layout/MenuCard.vue'
+
+const activeSection = ref('services')
+
+const handleScroll = () => {
+  const services = document.getElementById('services')
+  const tarifs = document.getElementById('tarifs')
+  if (!services || !tarifs) return
+
+  const scrollY = window.scrollY + 170 // Décalage pour le header
+  const servicesTop = services.offsetTop
+  const tarifsTop = tarifs.offsetTop
+
+  if (scrollY >= tarifsTop) {
+    activeSection.value = 'tarifs'
+  } else {
+    activeSection.value = 'services'
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+  handleScroll()
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id)

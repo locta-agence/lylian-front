@@ -35,13 +35,13 @@
         >
           Services & Tarifs
         </router-link>
-        <a
-          href="#about"
+        <router-link
+          to="/about"
           class="text-[38px] font-extrabold uppercase transition duration-200 hover:opacity-80"
-          :class="{ 'text-[#ACC9D3]': $route.hash === '#about' }"
+          :class="{ 'text-[#ACC9D3]': $route.path === '/about' }"
         >
           À propos
-        </a>
+        </router-link>
         <div class="text-center">
           <p class="text-white text-[38px] font-extrabold uppercase mb-2" :class="{ 'text-[#ACC9D3]': $route.hash === '/contact' }">Contact</p>
           <p class="text-white text-[16px] font-bold">06 38 48 28 84</p>

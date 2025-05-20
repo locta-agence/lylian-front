@@ -1,5 +1,7 @@
 {
-  "action": [],
+  "action": [
+    "/galleries/action/img (20).png"
+  ],
   "brands": [],
   "cars": [],
   "concert": [],
@@ -17,7 +19,6 @@
     "/galleries/montagne/img (18).png",
     "/galleries/montagne/img (19).png",
     "/galleries/montagne/img (2).png",
-    "/galleries/montagne/img (20).png",
     "/galleries/montagne/img (3).png",
     "/galleries/montagne/img (4).png",
     "/galleries/montagne/img (5).png",
